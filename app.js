@@ -66,5 +66,15 @@ app.controller('PhonebookController', ['$scope', function(scope){
         "company":"The Force Ltd.",
         "photo":"yoda.jpg"
     }
-	]
+];
 }]);
+
+app.directive('pbPersonCard', function(){
+    return {
+        restrict: 'E',
+        scope: {
+            person: '='
+        },
+        templateUrl: 'partials/person-card.html'
+    };
+});

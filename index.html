@@ -11,11 +11,9 @@
 	<body ng-app="phonebook">
 		<div ng-controller="PhonebookController">
 			<input type="text" ng-model="query"> <!-- Теперь в scope будет доступна переменная query -->
-			<ul>
-				<li ng-repeat="person in persons | filter:query "> <!-- person - объект -->
-					{{ person.name }} - {{person.phone}} <!-- Это expression -->
-				</li>
-			</ul>
+			<pb-person-card
+				ng-repeat="person in persons | filter:query "
+				person="person"></pb-person-card>
 		</div>
 	</body>
 </html>
