@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Phonebook</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="angular.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body ng-app="phonebook">
+		<div ng-controller="PhonebookController">
+			<input type="text" ng-model="query"> <!-- Теперь в scope будет доступна переменная query -->
+			<ul>
+				<li ng-repeat="person in persons | filter:query "> <!-- person - объект -->
+					{{ person.name }} - {{person.phone}} <!-- Это expression -->
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
